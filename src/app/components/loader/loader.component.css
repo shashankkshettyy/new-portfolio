@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+/* Your other CSS styles go here */
+#full-logo {
+  font-family: 'Muli', sans-serif;
+  font-style: italic;
+}
+

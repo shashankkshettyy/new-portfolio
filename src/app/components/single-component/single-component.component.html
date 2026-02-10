@@ -1,0 +1,111 @@
+<nav class="navbar">
+  <a (click)="navigate('home')">HOME</a>
+  <a (click)="navigate('about')">ABOUT</a>
+  <a (click)="navigate('projects')">PROJECTS</a>
+  <a (click)="navigate('contact')">CONTACT</a>
+</nav>
+
+<section class="hero">
+  <h1 class="intro">Hi! Welcome to My Portfolio</h1>
+
+  <h1 class="name">Shashank Shetty</h1>
+
+  <p class="role">Software Engineer &#64; Yucca Scalian</p>
+
+  <p class="typing">
+    Building <span>{{ currentText }}</span>
+  </p>
+  <section class="stats-section">
+    <div class="stats-card">
+      <img
+        src="https://leetcard.jacoblin.cool/shashank_013?theme=dark"
+        alt="LeetCode Stats"
+      />
+    </div>
+
+    <div class="stats-card">
+      <img
+        src="https://streak-stats.demolab.com?user=shashankkshettyy&theme=tokyonight&hide_border=true"
+        alt="GitHub Streak"
+      />
+    </div>
+  </section>
+</section>
+
+<section id="about" class="page">
+  <!-- About content here -->
+  <section class="page about-page">
+    <h1>About Me</h1>
+
+    <p class="about-text">
+      I'm a Software Engineer with strong interests in backend development,
+      cloud technologies, and AI-driven applications.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Skills</h2>
+        <ul>
+          <li>Java, Spring Boot</li>
+          <li>Angular, React</li>
+          <li>PostgreSQL, MySQL</li>
+          <li>Azure, Linux</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Education</h2>
+        <p><strong>B.E CSE</strong> – CGPA 9.20</p>
+        <p>PUC – 89.83%</p>
+        <p>SSLC – 92.96%</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="projects" class="page">
+  <!-- Projects content here -->
+  <section class="page projects-page">
+    <h1>Projects</h1>
+
+    <div class="projects">
+      <div class="project-card" *ngFor="let p of projects">
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.tech }}</p>
+        <a [href]="p.link" target="_blank" rel="noopener noreferrer"
+          >View on GitHub →</a
+        >
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="contact" class="page center">
+  <!-- Contact content here -->
+  <section class="page contact-page">
+    <h1>Contact Me</h1>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h2>Email</h2>
+        <p>
+          <a [href]="'mailto:' + email">{{ email }}</a>
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h2>LinkedIn</h2>
+        <p>
+          <a
+            href="https://linkedin.com/in/shashank-shetty-146686252"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin.com/in/shashank-shetty
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</section>
+<canvas #bgCanvas></canvas>
