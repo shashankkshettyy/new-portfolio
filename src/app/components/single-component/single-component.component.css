@@ -28,7 +28,6 @@
 }
 
 .hero h1 {
-  font-size: 4rem;
   margin: 0;
   color: #ffffff;
 }
@@ -55,7 +54,7 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: -1;
 }
 
 /* Page styling */
@@ -64,15 +63,41 @@ canvas {
   flex-direction: column;
   align-items: center;
   padding: 50px 20px;
-  min-height: 100vh;
+  /* min-height: 100vh; ❌ REMOVE THIS */
   text-align: center;
   background: #0d0d0d;
   color: #ffffff;
 }
+.navbar a {
+  cursor: pointer;
+  text-decoration: none;
+}
+/* Hide scrollbar completely but keep scrolling */
+:host {
+  overflow-y: scroll; /* enable scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Webkit browsers */
+:host::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* optional */
+}
+
+/* Optional: hide horizontal scrollbar if any */
+:host::-webkit-scrollbar-horizontal {
+  height: 0px;
+  background: transparent;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
 
 /* Page heading */
 .about-page h1 {
-  font-size: 4rem;
   color: #00bcd4;
   margin-bottom: 30px;
 }
@@ -176,7 +201,7 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
   padding: 50px 20px;
   text-align: center;
   background: #0d0d0d;
@@ -184,7 +209,6 @@ canvas {
 }
 
 .contact-page h1 {
-  font-size: 4rem;
   color: #00bcd4;
   margin-bottom: 40px;
 }
@@ -215,6 +239,25 @@ canvas {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.6s forwards;
+}
+/* Scroll reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* Active state */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional stagger support */
+.reveal {
+  transition-delay: var(--delay, 0s);
 }
 
 /* Staggered animation */
@@ -284,7 +327,6 @@ canvas {
 }
 
 .page h1 {
-  font-size: 4rem;
   color: #00bcd4;
   margin-bottom: 50px;
 }
@@ -383,3 +425,73 @@ canvas {
     transform: translateY(0);
   }
 }
+@media (max-width: 768px) {
+  /* NAVBAR */
+  .navbar {
+    justify-content: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  .navbar a {
+    margin: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* HERO */
+  .hero {
+    height: auto;
+    padding: 80px 20px 60px;
+  }
+
+
+
+  /* PAGE HEADINGS */
+  .page h1,
+  .about-page h1,
+  .contact-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  /* ABOUT TEXT */
+  .about-text {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* CARDS */
+  .card,
+  .project-card,
+  .contact-card {
+    padding: 20px;
+  }
+
+  .card h2,
+  .project-card h2,
+  .contact-card h2 {
+    font-size: 1.4rem;
+  }
+
+  /* STATS */
+  .stats-card img {
+    max-width: 100%;
+  }
+
+  /* CANVAS FIX */
+  canvas {
+    height: 100vh;
+  }
+}
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 4.5vw, 1.8rem);
+}
+
+p {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+}
+

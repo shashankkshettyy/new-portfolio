@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-single-component',
   imports: [CommonModule],
   templateUrl: './single-component.component.html',
-  styleUrl: './single-component.component.css',
+  styleUrls: ['./single-component.component.css'], // <-- fixed typo
 })
 export class SingleComponentComponent {
   projects = [
@@ -25,8 +24,11 @@ export class SingleComponentComponent {
       tech: 'Full Stack',
       link: 'https://github.com/shashankkshettyy/tours_travels_management',
     },
+    
   ];
+
   email = 'shashankshetty0013@gmail.com';
+
   texts: string[] = [
     'Websites',
     'Web Apps',
@@ -36,11 +38,14 @@ export class SingleComponentComponent {
   index = 0;
   currentText = '';
 
-  ngAfterViewInit() {
-    this.typeEffect();
-    this.scrollFromUrl();
-    this.observeScroll();
-  }
+ 
+ ngAfterViewInit() {
+  this.typeEffect();
+  this.scrollFromUrl();
+  this.observeScroll();
+  this.observeRevealAnimations(); // 👈 ADD THIS
+}
+
 
   typeEffect() {
     const text = this.texts[this.index];
@@ -55,6 +60,23 @@ export class SingleComponentComponent {
     }, 100);
   }
   constructor(private router: Router) {}
+observeRevealAnimations() {
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
 
   navigate(section: string) {
     this.router.navigate([section === 'home' ? '' : section], {
