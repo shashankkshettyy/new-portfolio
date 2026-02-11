@@ -43,7 +43,7 @@ export class SingleComponentComponent {
   this.typeEffect();
   this.scrollFromUrl();
   this.observeScroll();
-  this.observeRevealAnimations(); // 👈 ADD THIS
+ 
 }
 
 
@@ -60,23 +60,7 @@ export class SingleComponentComponent {
     }, 100);
   }
   constructor(private router: Router) {}
-observeRevealAnimations() {
-  const revealElements = document.querySelectorAll('.reveal');
 
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target); // animate once
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  revealElements.forEach(el => revealObserver.observe(el));
-}
 
   navigate(section: string) {
     this.router.navigate([section === 'home' ? '' : section], {

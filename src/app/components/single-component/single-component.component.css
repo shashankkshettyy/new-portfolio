@@ -19,12 +19,13 @@
 
 /* Hero section */
 .hero {
-  height: 80vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+ padding: 60px 50px;
 }
 
 .hero h1 {
@@ -240,25 +241,6 @@ canvas {
   transform: translateY(30px);
   animation: fadeInUp 0.6s forwards;
 }
-/* Scroll reveal base */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-}
-
-/* Active state */
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Optional stagger support */
-.reveal {
-  transition-delay: var(--delay, 0s);
-}
 
 /* Staggered animation */
 .contact-card:nth-child(1) {
@@ -437,13 +419,6 @@ canvas {
     margin: 10px 12px;
     font-size: 0.9rem;
   }
-
-  /* HERO */
-  .hero {
-    height: auto;
-    padding: 80px 20px 60px;
-  }
-
 
 
   /* PAGE HEADINGS */
