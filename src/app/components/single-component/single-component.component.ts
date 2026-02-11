@@ -29,12 +29,15 @@ export class SingleComponentComponent {
 
   email = 'shashankshetty0013@gmail.com';
 
-  texts: string[] = [
-    'Websites',
-    'Web Apps',
-    'Portfolio Projects',
-    'UI Designs',
-  ];
+texts: string[] = [
+  'Angular Development',
+  'React PWA Applications',
+  'Node.js & Express APIs',
+  'PostgreSQL Databases',
+  'Azure Cloud Solutions',
+  'Scalable Backend Systems'
+];
+
   index = 0;
   currentText = '';
 
