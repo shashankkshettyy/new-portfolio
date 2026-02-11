@@ -18,6 +18,6 @@ export class AppComponent {
     setTimeout(() => {
       this.loading = false;
       console.log('Loader finished');
-    }, 6000); // mock 3s loader, remove later
+    }, 2500); // mock 3s loader, remove later
   }
 }
