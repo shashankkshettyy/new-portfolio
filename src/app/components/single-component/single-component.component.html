@@ -22,6 +22,10 @@
         alt="LeetCode Stats"
       />
     </div>
+    <img
+      src="https://leetcard.jacoblin.cool/shashank_013?theme=dark&ext=heatmap"
+      alt="LeetCode Heatmap"
+    />
 
     <div class="stats-card">
       <img
@@ -32,75 +36,75 @@
   </section>
 </section>
 
-<section id="about" class="page about-page ">
+<section id="about" class="page about-page">
   <!-- About content here -->
-    <h1>About Me</h1>
+  <h1>About Me</h1>
 
-    <p class="about-text">
-      I'm a Software Engineer with strong interests in backend development,
-      cloud technologies, and AI-driven applications.
-    </p>
+  <p class="about-text">
+    I'm a Software Engineer with strong interests in backend development, cloud
+    technologies, and AI-driven applications.
+  </p>
 
-    <div class="grid">
-      <div class="card">
-        <h2>Skills</h2>
-        <ul>
-          <li>Java, Spring Boot</li>
-          <li>Angular, React</li>
-          <li>PostgreSQL, MySQL</li>
-          <li>Azure, Linux</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Education</h2>
-        <p><strong>B.E CSE</strong> – 9.20 CGPA</p>
-        <p>PUC – 89.83%</p>
-        <p>SSLC – 92.96%</p>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>Java, Spring Boot</li>
+        <li>Angular, React</li>
+        <li>PostgreSQL, MySQL</li>
+        <li>Azure, Linux</li>
+      </ul>
     </div>
+
+    <div class="card">
+      <h2>Education</h2>
+      <p><strong>B.E CSE</strong> – 9.20 CGPA</p>
+      <p>PUC – 89.83%</p>
+      <p>SSLC – 92.96%</p>
+    </div>
+  </div>
 </section>
 
-<section id="projects" class="page projects-page ">
+<section id="projects" class="page projects-page">
   <!-- Projects content here -->
-    <h1>Projects</h1>
+  <h1>Projects</h1>
 
-    <div class="projects">
-      <div class="project-card" *ngFor="let p of projects">
-        <h2>{{ p.title }}</h2>
-        <p>{{ p.tech }}</p>
-        <a [href]="p.link" target="_blank" rel="noopener noreferrer"
-          >View on GitHub →</a
-        >
-      </div>
+  <div class="projects">
+    <div class="project-card" *ngFor="let p of projects">
+      <h2>{{ p.title }}</h2>
+      <p>{{ p.tech }}</p>
+      <a [href]="p.link" target="_blank" rel="noopener noreferrer"
+        >View on GitHub →</a
+      >
     </div>
+  </div>
 </section>
 
-<section id="contact" class="page contact-page ">
+<section id="contact" class="page contact-page">
   <!-- Contact content here -->
- 
-    <h1>Contact Me</h1>
 
-    <div class="contact-cards">
-      <div class="contact-card">
-        <h2>Email</h2>
-        <p>
-          <a [href]="'mailto:' + email">{{ email }}</a>
-        </p>
-      </div>
+  <h1>Contact Me</h1>
 
-      <div class="contact-card">
-        <h2>LinkedIn</h2>
-        <p>
-          <a
-            href="https://linkedin.com/in/shashanka-shetty-146686252"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            linkedin.com/in/shashanka-shetty
-          </a>
-        </p>
-      </div>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h2>Email</h2>
+      <p>
+        <a [href]="'mailto:' + email">{{ email }}</a>
+      </p>
     </div>
+
+    <div class="contact-card">
+      <h2>LinkedIn</h2>
+      <p>
+        <a
+          href="https://linkedin.com/in/shashanka-shetty-146686252"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          linkedin.com/in/shashanka-shetty
+        </a>
+      </p>
+    </div>
+  </div>
 </section>
 <canvas #bgCanvas></canvas>
